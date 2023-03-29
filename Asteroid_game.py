@@ -1,4 +1,5 @@
 # Adopted and adapted PyGame Tutorial from https://coderslegacy.com/python/python-pygame-tutorial/
+# Audio files were sourced from the MixKit site under the Mixkit Sound Effects Free License https://mixkit.co/terms/
 # Date: 27th March 2023
 
 import sys, pygame, random, time
@@ -6,6 +7,7 @@ from pygame.locals import *
  
 # Initialising the PyGame engine
 pygame.init()
+pygame.mixer.init()
  
 # Setting frame-per-second (FPS) rate
 FPS = 60
@@ -28,6 +30,10 @@ game_over = font_big.render("Game Over", True, FONT_COLOUR_GAMEOVER)
 DISPLAYSURF = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 DISPLAYSURF.fill(SPACE_BACKGROUND)
 pygame.display.set_caption("Asteroid Hunting")
+
+# Add background music
+pygame.mixer.music.load('audio/mixkit-game-level-music-689.wav')
+pygame.mixer.music.play()
 
 # Defining Asteroid class 
 class Asteroid(pygame.sprite.Sprite):
@@ -111,7 +117,8 @@ while True:
  
     #To be run if collision occurs between Player and Enemy
     if pygame.sprite.spritecollideany(earth, asteroids):
-            # pygame.mixer.Sound('crash.wav').play()
+            pygame.mixer.music.stop()
+            pygame.mixer.Sound('audio/mixkit-arcade-chiptune-explosion-1691.wav').play()
             time.sleep(0.5)
 
             DISPLAYSURF.fill(SPACE_BACKGROUND)
