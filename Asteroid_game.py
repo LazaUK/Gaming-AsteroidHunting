@@ -25,7 +25,6 @@ SCORE = 0
 #Setting up Fonts
 font_big = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
-game_over = font_big.render("Game Over", True, FONT_COLOUR_GAMEOVER)
 
 DISPLAYSURF = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 DISPLAYSURF.fill(SPACE_BACKGROUND)
@@ -122,7 +121,8 @@ while True:
             time.sleep(0.5)
 
             DISPLAYSURF.fill(SPACE_BACKGROUND)
-            DISPLAYSURF.blit(game_over, (SCREEN_WIDTH / 3, 250))
+            game_over = font_big.render(f"Game Over! Your score is {SCORE}", True, FONT_COLOUR_GAMEOVER)
+            DISPLAYSURF.blit(game_over, (SCREEN_WIDTH / 15, 250))
 
             pygame.display.update()
             for entity in all_sprites:
