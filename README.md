@@ -9,6 +9,6 @@ To start the game, run
 ```
 python Asteroid_game.py
 ```
-Navigation is controlled by Left and Right move keys.
+Navigation is controlled by Left and Right move keys. Enjoy!
 
 ![Thumbnail](/images/Game_Thumbnail.png)
