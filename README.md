@@ -4,10 +4,10 @@
 - Audio effect files are sourced from the MixKit site under the [Mixkit Sound Effects Free License](https://mixkit.co/terms).
 - Images created by DALL-E model in [Bing](https://www.bing.com/)
 
-## Game Launch
+# Game Launch
 To start the game, run
 ```
-python asteroids.py
+python Asteroid_game.py
 ```
 Navigation is controlled by Left and Right move keys.
 
